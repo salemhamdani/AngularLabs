@@ -1,0 +1,30 @@
+<div class="col m-4 ">
+  <p class="h3">Mini word editor</p>
+  <div class="row g-3 w-100">
+    <div class="col-auto">
+      <input type="color" #colorInput class="form-control form-control-color" id="textColor" value="color"
+             title="Choose your color" (change)="color= colorInput.value">
+    </div>
+    <div class="col-auto">
+      <input type="number" class="form-control" id="textSize"
+             #sizeInput (change)="size = sizeInput.value +'px' " placeholder="Size" value="10">
+    </div>
+    <div class="col-auto">
+      <select id="fontFamily" class="form-select" aria-label="Default select example"
+              #fontInput (change)="fontFamily=fontInput.value"
+      >
+        <option *ngFor='let font of fonts ;' value='{{font}}'>{{font}}</option>
+
+      </select>
+    </div>
+  </div>
+  <div class="col-12 mt-2">
+    <div class="form-group">
+      <textarea [ngStyle]="{
+      'color': color,
+      'font-size': size,
+      'font-family': fontFamily
+      }" class="form-control"  rows="3"></textarea>
+    </div>
+  </div>
+</div>

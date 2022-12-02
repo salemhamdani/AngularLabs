@@ -1,0 +1,5 @@
+<script src="../item-cv/item-cv.component.ts"></script>
+<script src="../cv/cv.component.ts"></script>
+<ol class="list-group">
+  <app-item-cv *ngFor='let person of persons;' [person]="person" (selectedPerson)="selectPerson($event)"></app-item-cv>
+</ol>

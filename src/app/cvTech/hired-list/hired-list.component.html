@@ -1,0 +1,13 @@
+<div *ngIf="hiredPersons.length" class="m-3 border border-1 border-secondary  w-50">
+  <div class="d-flex justify-content-center ">
+    <h3 class="align-middle mt-3">Hired </h3>
+  </div>
+
+  <hr>
+  <ul class="list-group list-group-flush ">
+    <li class="list-group-item " *ngFor="let person of hiredPersons">
+      <img src="{{person.path | defaultImage}}" width="50px" height="50px"> {{person.fName}} {{person.lName}}
+
+    </li>
+  </ul>
+</div>

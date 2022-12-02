@@ -1,0 +1,11 @@
+<div class="container m-2 d-flex justify-content-center ">
+<p class="h3">Visit card creator</p>
+</div>
+  <div class="row">
+  <div class="col-md-6 clo-sm-3">
+    <app-carte-view [person]="person"></app-carte-view>
+  </div>
+  <div class="col-md-6 col-sm-9 ">
+    <app-carte-input (changePerson)="onChange($event)"></app-carte-input>
+  </div>
+</div>

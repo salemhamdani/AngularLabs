@@ -1,0 +1,8 @@
+<!--<app-fils [myFavoriteColor]="color" > </app-fils>-->
+
+<div [style.background-color]="color">
+  <p>Change color as u like</p>
+</div>
+<input #input (change)="changeColor(input.value)" type="text" placeholder="Write a color !"
+       class="form-control color-input">
+<button class="btn btn-success color-button" (click)="initColor()">Reinitialise background color</button>
