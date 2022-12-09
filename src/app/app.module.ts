@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ColorComponent } from './ColorManipulation/color/color.component';
@@ -25,6 +24,12 @@ import {HeaderComponent} from "./header/header.component";
 import {ColorSimulatorComponent} from "./color-simulator/color-simulator.component";
 import { HomeComponent } from './home/home.component';
 import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
+import {MoreDetailsComponent} from "./cvTech/more-details/more-details.component";
+import {AddCvComponent} from "./cvTech/add-cv/add-cv.component";
+import { NotFoundComponent } from './not-found/not-found.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -49,13 +54,20 @@ import { RouterSimulatorComponent } from './router-simulator/router-simulator.co
     HeaderComponent,
     ColorSimulatorComponent,
     HomeComponent,
-    RouterSimulatorComponent
+    RouterSimulatorComponent,
+    MoreDetailsComponent,
+    AddCvComponent,
+    NotFoundComponent,
+    LoginComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
-    ROUTING
+    ROUTING,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

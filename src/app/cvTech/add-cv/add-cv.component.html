@@ -1,0 +1,35 @@
+<div class="container ">
+  <form #form="ngForm">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" required ngModel class="form-control" id="nameInput" name="lName">
+
+    </div>
+    <div class="mb-3">
+      <label for="firstNameInput" class="form-label">FirstName</label>
+      <input type="text" class="form-control" ngModel id="firstNameInput" name="fName" required>
+    </div>
+    <div class="mb-3 ">
+      <label for="jobInput" class="form-label">Job</label>
+      <input type="text" class="form-control" ngModel id="jobInput" required name="job">
+    </div>
+    <div class="mb-3 ">
+      <label for="ageInput" class="form-label">Age</label>
+      <input type="number" class="form-control" ngModel required id="ageInput" name="age">
+    </div>
+    <div class="mb-3 ">
+      <label for="cinInput" class="form-label">Cin</label>
+      <input type="number" class="form-control" ngModel required id="cinInput" name="cin">
+    </div>
+    <div class="mb-3 ">
+      <label for="pathInput" class="form-label">Path</label>
+      <input type="text" class="form-control"   id="pathInput" name="path">
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" [disabled]="form.invalid" (click)="addPerson(form)" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+
+  </form>
+</div>

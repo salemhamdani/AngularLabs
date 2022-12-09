@@ -39,7 +39,20 @@ export class CvService {
     ]
   }
 
-  getPersons(): Person[]{
+  getPersons(): Person[] {
     return this.persons
+  }
+
+  getPersonById(id: number): Person {
+    const person = this.persons.filter((person: Person) => person.id == id)[0]
+    return person
+  }
+  deletePerson(id:number){
+    this.persons = this.persons.filter((person: Person) => person.id != id)
+  }
+  add(person : Person){
+    console.log(person)
+    this.persons.push(person)
+
   }
 }
