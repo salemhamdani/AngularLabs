@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Person} from "../Model/Person";
-import {Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,8 @@ import {Subject} from "rxjs";
 export class CvService {
   persons: Person[] = [];
   private CvSubject = new Subject<Person>();
-  selectedCv = this.CvSubject.asObservable();
-  passValue(data : Person) {
-    //passing the data as the next observable
-    this.CvSubject.next(data);
-  }
+  selectedCv: Observable<Person> = this.CvSubject.asObservable();
+
   constructor() {
     this.persons = [
       new Person({
@@ -61,5 +58,10 @@ export class CvService {
   add(person: Person) {
     this.persons.push(person)
 
+  }
+
+  passValue(data: Person) {
+    //passing the data as the next observable
+    this.CvSubject.next(data);
   }
 }
