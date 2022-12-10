@@ -11,13 +11,14 @@ import {Person} from "../../Model/Person";
 export class MoreDetailsComponent implements OnInit {
 
   person: Person | null = null;
+  private sub: any;
 
   constructor(private cvService: CvService, private activatedRoute: ActivatedRoute, private router: Router
   ) {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) =>
+    this.sub = this.activatedRoute.params.subscribe((params) =>
       this.person = this.cvService.getPersonById(params['id']))
   }
 
@@ -25,6 +26,10 @@ export class MoreDetailsComponent implements OnInit {
     this.cvService.deletePerson(person.id)
     const link = ['cv']
     this.router.navigate(link)
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }

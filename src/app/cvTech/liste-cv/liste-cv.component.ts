@@ -8,7 +8,6 @@ import {Person} from "../../Model/Person";
 })
 export class ListeCvComponent implements OnInit {
   @Input() persons: Person[] = []
-  @Output() selectedPerson = new EventEmitter<Person>();
 
   constructor() {
   }
@@ -16,9 +15,4 @@ export class ListeCvComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectPerson(selectedPerson: Person) {
-    this.selectedPerson.emit(
-      selectedPerson
-    )
-  }
 }
